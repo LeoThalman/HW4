@@ -13,5 +13,10 @@ namespace HW4.Controllers
         {
             return View();
         }
+
+        public ActionResult Page1()
+        {
+            return View();
+        }
     }
 }
