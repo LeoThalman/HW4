@@ -1,19 +1,15 @@
 ﻿
-@{
-    ViewBag.Title = "Page1";
-}
 
-<h2>ViewBag.Title</h2>
+
+<h2>@ViewBag.Title</h2>
 <p>@ViewBag.Message</p>
 
-<form method="post">
+<form method="post" action="/Home/Page1Text">
     <label for="temp">Temperature in Celsius or Fahrenheit</label>
     <input type="number" name="temp" value="" />
     <label for="tempType">Temp to Convert to (C or F)</label>
     <input type="text" name="tempType" value="" />
     <input type="submit" name="submit" value="Convert" />
 </form>
-@if (ViewBag.nTemp != null)
-{
-<h3>New Temperature is @ViewBag.nTemp</h3>
-}
+
+
