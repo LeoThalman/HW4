@@ -22,6 +22,7 @@ namespace HW4.Controllers
         /// <returns>loads Page1.html</returns>
         public ActionResult Page1()
         {
+            ViewBag.Title = "Temperature Conversion";
             return View();
         }
 
@@ -29,7 +30,6 @@ namespace HW4.Controllers
         /// Checks if the temp is empty, 
         /// parses temp into a double and converts it to Celsius or Fahrenheit depending
         /// on what was entered in tempType, if neither c or f pass an error message
-        ///
         /// </summary>
         /// <returns>The new page with the new temperature</returns>
         public ActionResult Page1Text()
@@ -62,10 +62,50 @@ namespace HW4.Controllers
             }
                 else
                 {
-                    ViewBag.Message = "Please enter a Number";
+                    ViewBag.Message = "Please enter a Temp number";
                 }
         }
         return View();
+        }
+
+        [HttpGet]
+        public ActionResult Page2()
+        {
+            ViewBag.Title = "Time Conversion";
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Page2(FormCollection form)
+        {
+            string time = Convert.ToString(form["time"]);
+            string timeType = Convert.ToString(form["timeType"]);
+            ViewBag.Title = "Page 2";
+            timeType = timeType.ToLower();
+            if (Double.TryParse(time, out Double nTime))
+            {
+                if(timeType.Equals("h"))
+                {
+                    nTime = nTime / 60;
+                    nTime = Math.Round(nTime, 2);
+                    ViewBag.Message = "Your time is " + nTime.ToString();
+                }
+                else if (timeType.Equals("m"))
+                {
+                    nTime = nTime * 60;
+                    nTime = Math.Round(nTime, 2);
+                    ViewBag.Message = "Your time is " + nTime.ToString();
+                }
+                else
+                {
+                    ViewBag.Message = "Please Enter H or M to convert to" + time.ToString();
+                }
+            }
+            else
+            {
+                ViewBag.Message = "Please enter a time";
+            }
+            return View();
         }
     }
 }
