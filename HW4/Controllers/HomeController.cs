@@ -26,9 +26,10 @@ namespace HW4.Controllers
         }
 
         /// <summary>
-        /// Checks if the temp and tempType fields are empty, if not
+        /// Checks if the temp is empty, 
         /// parses temp into a double and converts it to Celsius or Fahrenheit depending
-        /// on what was entered in tempType, if neither c or f
+        /// on what was entered in tempType, if neither c or f pass an error message
+        ///
         /// </summary>
         /// <returns>The new page with the new temperature</returns>
         public ActionResult Page1Text()
