@@ -1,12 +1,15 @@
-﻿
-<h2>@ViewBag.Title</h2>
-<h3>@ViewBag.Message</h3>
+﻿<h2>@ViewBag.Title</h2>
 
 <form method="post">
-    <label for="time">Time in Hours or Minutes</label>
-    <input type="text" name="time" value="" />
-    <label for="timeType">Time to convert to (H or M)</label>
-    <input type="text" name="timeType" value="" />
-    <input type="submit" name="submit" value="Convert" />
+    <label for="principal">Loan Amount</label>
+    <input type="number" step="any" name="principal" value="" /><br />
+    <label for="interest">Yearly Interest Rate</label>
+    <input type="number" step="any" name="interest" value="" />%<br />
+    <label for="termLength">Period Length in months</label>
+    <input type="number" step="any" name="termLength" value="" /><br />
+    <input type="submit" name="submit" value="Calculate" />
 </form>
+<p>@ViewBag.errMessage</p>
+<p>@ViewBag.mPay</p>
+<p>@ViewBag.tPay</p>
 
