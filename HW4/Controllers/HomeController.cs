@@ -12,7 +12,7 @@ namespace HW4.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            ViewBag.Message = "The Home Page";
+            ViewBag.Title = "Homework 4 Home Page";
             return View();
         }
 
