@@ -80,7 +80,7 @@ namespace HW4.Controllers
         {
             string time = Convert.ToString(form["time"]);
             string timeType = Convert.ToString(form["timeType"]);
-            ViewBag.Title = "Page 2";
+            ViewBag.Title = "Hour/Minute Converter";
             timeType = timeType.ToLower();
             if (Double.TryParse(time, out Double nTime))
             {
