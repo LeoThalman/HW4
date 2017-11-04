@@ -107,5 +107,25 @@ namespace HW4.Controllers
             }
             return View();
         }
+
+
+        [HttpGet]
+        public ActionResult Page3()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Page3(int? prin, double? iRate, double? numP)
+        {
+            ViewBag.Title = "Loan Calculator";
+            iRate = iRate * .01;
+            iRate = iRate / 12;
+            double? payment = 0;
+            payment = (iRate * prin) / (1 - Math.Pow((1 + (double)iRate), -(double)numP));
+            payment = Math.Round((double)payment, 2);
+            ViewBag.mPay = "Your monthly payment is " + payment.ToString(); ;
+            return View();
+        }
     }
 }
