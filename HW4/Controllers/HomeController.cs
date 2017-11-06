@@ -164,8 +164,8 @@ namespace HW4.Controllers
                 double total = payment * numP;
                 total = Math.Round(total, 2);
                 payment = Math.Round(payment, 2);
-                ViewBag.mPay = "Your monthly payment is " + payment.ToString();
-                ViewBag.tPay = "Your total payment is " + total.ToString();
+                ViewBag.mPay = "Your monthly payment is $" + payment.ToString();
+                ViewBag.tPay = "Your total payment is $" + total.ToString();
             }
             return View();
         }
